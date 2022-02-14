@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+
+* PALETA DE COLORES
+* Fondo: khaki
+*/
+
+html, body { 
+    height: 100%;
+}
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.navbar{
+    background-color: khaki;
+}
+
+.menubutton {
+    border: none;
+    background-color: khaki;
+}
+.itemnav{
+    background-color: rgb(235, 229, 176);
+}
+#nombreApp{
+    font-size: 25px;
+}
+.contenido{
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+mat-grid-list{
+    width: 85%;
+    margin: auto;
+}
+mat-grid-tile {
+    background: lightblue;
+
+}
