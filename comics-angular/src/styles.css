@@ -1,11 +1,15 @@
 /*
-
-* PALETA DE COLORES
-* Fondo: khaki
+**** PALETA DE COLORES****
+* Fondo navbar: rgb(88, 87, 87)
+* Fondo Menu: E5E2E2
+* Fondo imagen: lightblue
+* Color Letras Nombre Manga: #E5E2E2
+* Body background color: rgb(237, 238, 238)
 */
 
 html, body { 
     height: 100%;
+    background-color: rgb(237, 238, 238);
 }
 
 body { 
@@ -14,28 +18,74 @@ body {
 }
 
 .navbar{
-    background-color: khaki;
+    /* background-color: rgb(47, 171, 212); */
+    background-color: rgb(88, 87, 87);
+    height: 12%;
+    color: #E5E2E2;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .menubutton {
     border: none;
-    background-color: khaki;
-}
-.itemnav{
-    background-color: rgb(235, 229, 176);
+    background-color: rgb(88, 87, 87);
 }
 #nombreApp{
     font-size: 25px;
 }
 .contenido{
-    margin-top: 3%;
-    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-bottom: 0%;
 }
 mat-grid-list{
     width: 85%;
     margin: auto;
 }
 mat-grid-tile {
-    background: lightblue;
+    display: block;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.img-grid{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute; 
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgb(47, 171, 212); /*Black see-through */
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 28px;
+    font-weight: bolder;
+    padding: 20px;
+    text-align: center;
+    line-height: 1;
+  }
+
+mat-grid-tile:hover .overlay {
+    opacity: 1;
+}
+
+/*Edición de propiedades del css de Material*/
+.mat-menu-panel {
+    width: 100%;
+    background-color: rgb(229, 226, 226);
+}
+
+.cdk-overlay-pane {
+    width: 40%;
+}
+.mat-menu-item {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
 
 }
+
+/*Fin Edición*/

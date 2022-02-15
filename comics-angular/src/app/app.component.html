@@ -2,7 +2,7 @@
 
 <div class="navbar">
   <button class="menubutton" mat-button [matMenuTriggerFor]="menu">
-    <img src="https://img.icons8.com/ios/50/000000/menu--v1.png" /></button>
+    <img src="assets/botomenu1.png" /></button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item class="itemnav">Buscar Manga</button>
     <button mat-menu-item class="itemnav">Ver Lista Favoritos</button>
@@ -11,23 +11,14 @@
   <div id="nombreApp">Nombre Provisional</div>
 </div>
 
+<!--Grid de mangas-->
+
 <div class="contenido">
-  <mat-grid-list cols="4" rowHeight="1:1"[gutterSize]="'10px'">
-    <mat-grid-tile><img src="images/rengoku.jpeg" alt=""></mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
+  <mat-grid-list cols="4" rowHeight="1:1.5"[gutterSize]="'20px'">
+    <mat-grid-tile *ngFor="let tile of tiles">
+    <img class="img-grid" [src]="tile.img">
+    <div class="overlay">{{tile.name}}</div>
+  </mat-grid-tile>
   </mat-grid-list>
 </div>
+
