@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatGridListModule } from '@angular/material/grid-list';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BuscarComicsComponent } from './buscar-comics/buscar-comics.component';
-import { ComicsComponent } from './comics/comics.component';
+
+/*IMPORTS MATERIAL */
+import { MatMenuModule } from '@angular/material/menu';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 
-/*IMPORTACIÓN COMPONENTES */
+/*IMPORTS COMPONENTES */
+import { BuscarComicsComponent } from './buscar-comics/buscar-comics.component';
+import { ComicsComponent } from './comics/comics.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [

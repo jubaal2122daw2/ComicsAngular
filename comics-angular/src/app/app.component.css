@@ -1,0 +1,19 @@
+.navbar{
+    /* background-color: rgb(47, 171, 212); */
+    background-color: rgb(88, 87, 87);
+    height: 10%;
+    color: #E5E2E2;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.menubutton {
+    border: none;
+    background-color: rgb(88, 87, 87);
+}
+.menubutton>img{
+    width: 78%;
+}
+#nombreApp{
+    font-size: 25px;
+}
