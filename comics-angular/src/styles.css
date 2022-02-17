@@ -20,7 +20,7 @@ body {
 .navbar{
     /* background-color: rgb(47, 171, 212); */
     background-color: rgb(88, 87, 87);
-    height: 12%;
+    height: 10%;
     color: #E5E2E2;
     font-weight: bold;
     letter-spacing: 3px;
@@ -29,6 +29,9 @@ body {
 .menubutton {
     border: none;
     background-color: rgb(88, 87, 87);
+}
+.menubutton>img{
+    width: 78%;
 }
 #nombreApp{
     font-size: 25px;
@@ -56,7 +59,7 @@ mat-grid-tile {
     position: absolute; 
     bottom: 0; 
     background: rgb(0, 0, 0);
-    background: rgb(47, 171, 212); /*Black see-through */
+    background: rgb(47, 171, 212,0.8); /*Black see-through */
     width: 100%;
     transition: .5s ease;
     opacity:0;
@@ -68,7 +71,22 @@ mat-grid-tile {
     line-height: 1;
   }
 
+  .overlay-fav{
+    position: absolute;
+    background: rgb(47, 171, 212,0.8); 
+    top: 0;
+    right: 0;
+    transition: .5s ease;
+    opacity:0;
+    padding: 20px;
+    color: rgb(255, 251, 0)
+  }
+
 mat-grid-tile:hover .overlay {
+    opacity: 1;
+}
+
+mat-grid-tile:hover .overlay-fav {
     opacity: 1;
 }
 

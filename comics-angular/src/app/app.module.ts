@@ -7,12 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BuscarComicsComponent } from './buscar-comics/buscar-comics.component';
+import { ComicsComponent } from './comics/comics.component';
+import { MatIconModule } from '@angular/material/icon';
 
 /*IMPORTACIÓN COMPONENTES */
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BuscarComicsComponent,
+    ComicsComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

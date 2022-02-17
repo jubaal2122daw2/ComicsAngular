@@ -1,0 +1,9 @@
+<div class="contenido">
+    <mat-grid-list cols="4" rowHeight="1:1.5"[gutterSize]="'20px'">
+      <mat-grid-tile *ngFor="let tile of tiles">
+      <img class="img-grid" [src]="tile.img">
+      <div class="overlay-fav"><mat-icon aria-hidden="false">star</mat-icon></div>
+      <div class="overlay">{{tile.name}}</div>
+    </mat-grid-tile>
+    </mat-grid-list>
+</div>
