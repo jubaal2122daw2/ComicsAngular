@@ -7,15 +7,72 @@
 * Body background color: rgb(237, 238, 238)
 */
 
-html, body { 
-    height: 100%;
-    background-color: rgb(237, 238, 238);
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
+
+/*Estiles muestra comics*/
+
+.contenido{
+    margin-top: 5%;
+    margin-bottom: 0%;
+}
+mat-grid-list{
+    width: 85%;
+    margin: auto;
+}
+mat-grid-tile {
+    display: block;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.img-grid{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute; 
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgb(47, 171, 212,0.8); /*Black see-through */
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 28px;
+    font-weight: bolder;
+    padding: 20px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .overlay-fav{
+    position: absolute;
+    background: rgb(47, 171, 212,0.8); 
+    top: 0;
+    right: 0;
+    transition: .5s ease;
+    opacity:0;
+    padding: 20px;
+    color: rgb(255, 251, 0)
+  }
+
+mat-grid-tile:hover .overlay {
+    opacity: 1;
+}
+
+mat-grid-tile:hover .overlay-fav {
+    opacity: 1;
+}
+
+
+
 
 /*
 * Edición de propiedades del css de Material
@@ -33,7 +90,31 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: 18px;
     font-weight: 400;
-
 }
 
+/*Para editar la barra de buscar.*/
+
+.mat-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 230% !important;
+}
+
+.mat-form-field {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.125;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+}
+
+/*.mat-form-field-flex {
+    padding: 0 0.75em 0px 0.75em;
+    margin-top: 9% !important;
+    margin-left: 20px;
+    position: relative;
+} */
+
 /*Fin Edición*/
+
