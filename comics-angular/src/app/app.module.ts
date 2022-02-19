@@ -18,12 +18,14 @@ import {MatCardModule} from '@angular/material/card';
 import { BuscarComicsComponent } from './buscar-comics/buscar-comics.component';
 import { ComicsComponent } from './comics/comics.component';
 import { AppComponent } from './app.component';
+import { ComicTemplateComponent } from './comic-template/comic-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuscarComicsComponent,
-    ComicsComponent
+    ComicsComponent,
+    ComicTemplateComponent
   ],
   imports: [
     BrowserModule,
