@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Comics } from '../service-comics/comics-service';
+import { Comic } from '../service-comics/comics-interface';
+
 @Component({
   selector: 'app-buscar-comics',
   templateUrl: './buscar-comics.component.html',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarComicsComponent implements OnInit {
 
-  constructor() { }
+  comics: Comic[] = [];
 
-  ngOnInit(): void {
+  constructor(private comicService: Comics) { }
+
+  ngOnInit() { //carga lo primeno nada más iniciar
+    this.obtenerComicsdeService();
+  }
+
+  obtenerComicsdeService(): void {
+    this.comicService.obtenerComics()
+      .subscribe(comics => this.comics = comics);
   }
 
 }

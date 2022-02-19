@@ -1,20 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { Comics } from '../service-comics/comics-service';
+import { Comic } from '../service-comics/comics-interface';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './comics.component.html',
   styleUrls: ['./comics.component.css'] //de momento esto no hace nada
 })
-export class ComicsComponent {
-    title = 'comics-angular';
-    tiles: any[] = [
-      {img: 'assets/Rengoku.png', name: 'Kimetsu no Yaiba'},
-      {img: 'assets/tokyorevengers.png', name: 'Tokyo Revengers'},
-      {img: 'assets/fullmetal.png', name: 'Full Metal Alchemist'},
-      {img: 'assets/erased.png', name: 'Erased'},
-      {img: 'assets/shingeki.png', name: 'Shingeki no Kyojin'},
-      {img: 'assets/jujutsu.png', name: 'Jujutsu Kaisen'},
-      {img: 'assets/bokunohero.png', name: 'Boku no Hero Academia'},
-      {img: 'assets/given.png', name: 'Given'},
-    ];
+export class ComicsComponent implements OnInit {
+
+  comics: Comic[] = [];
+
+  constructor(private comicService: Comics) { }
+
+
+  ngOnInit() { //carga lo primeno nada más iniciar
+    this.obtenerComicsdeService();
+  }
+
+  obtenerComicsdeService(): void {
+    this.comicService.obtenerComics()
+      .subscribe(comics => this.comics = comics);
+  }
+
 }
+
+

@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 /*IMPORTS COMPONENTES */
 import { BuscarComicsComponent } from './buscar-comics/buscar-comics.component';
@@ -27,7 +30,9 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     MatMenuModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
