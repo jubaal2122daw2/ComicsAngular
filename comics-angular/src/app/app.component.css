@@ -1,6 +1,6 @@
 .navbar{
     /* background-color: rgb(47, 171, 212); */
-    background-color: rgb(88, 87, 87);
+    background-color: #3F51B5;
     height: 10%;
     color: #E5E2E2;
     font-weight: bold;
@@ -9,7 +9,7 @@
 
 .menubutton {
     border: none;
-    background-color: rgb(88, 87, 87);
+    background-color: #3F51B5;
 }
 .menubutton>img{
     width: 78%;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Comics } from '../service-comics/comics-service';
 import { Comic } from '../service-comics/comics-interface';
+import { response } from 'express';
 
 
 @Component({
@@ -23,6 +24,17 @@ export class ComicsComponent implements OnInit {
   obtenerComicsdeService(): void {
     this.comicService.obtenerComics()
       .subscribe(comics => this.comics = comics);
+  }
+
+  anadirFavoritos(comic:Comic): void{
+    // this.comics.forEach((objeto, index, array) => {
+    //   if(objeto.name = name){
+    //     array[index].fav = true;
+    //   }
+      
+    // });
+    comic.fav = !comic.fav;
+    console.log(comic.fav);
   }
 
 }

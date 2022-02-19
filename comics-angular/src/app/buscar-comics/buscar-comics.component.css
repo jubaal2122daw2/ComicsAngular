@@ -1,0 +1,12 @@
+.generos-checkbox{  
+    margin: auto;
+    width: 85%;
+    margin-top: 3%;
+}
+
+.check{
+    display: inline-block;
+    margin: 10px;
+    color: #3F51B5;
+    font-size: 18px;
+}

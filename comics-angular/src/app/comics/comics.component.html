@@ -1,8 +1,8 @@
 <div class="contenido">
     <mat-grid-list cols="4" rowHeight="1:1.5"[gutterSize]="'20px'">
-      <mat-grid-tile *ngFor="let comic of comics">
+      <mat-grid-tile *ngFor="let comic of comics" >
       <img class="img-grid" [src]="comic.img">
-      <div class="overlay-fav"><mat-icon aria-hidden="false">star</mat-icon></div>
+      <div class="overlay-fav"><mat-icon aria-hidden="false"(click)="anadirFavoritos(comic)">star</mat-icon></div>
       <div class="overlay">{{comic.name}}</div>
     </mat-grid-tile>
     </mat-grid-list>

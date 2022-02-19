@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 
 import { Comics } from '../service-comics/comics-service';
 import { Comic } from '../service-comics/comics-interface';
@@ -11,6 +11,8 @@ import { Comic } from '../service-comics/comics-interface';
 export class BuscarComicsComponent implements OnInit {
 
   comics: Comic[] = [];
+  types: string [] = ['Supernatural', 'Shonen', 'Shojo', 'Romance', 'Slice-Life', 'Yaoi', 'Drama','Action'];
+  checked = false;
 
   constructor(private comicService: Comics) { }
 
