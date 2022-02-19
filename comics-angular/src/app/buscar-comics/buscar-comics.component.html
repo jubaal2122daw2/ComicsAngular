@@ -1,1 +1,17 @@
-<p>buscar-comics works!</p>
+<p>
+  <mat-form-field appearance="outline" >
+    <mat-label>Buscar Comics</mat-label>
+    <input matInput placeholder="Escribe para buscar tus comics...">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</p>
+
+<div class="contenido">
+  <mat-grid-list cols="4" rowHeight="1:1.5"[gutterSize]="'20px'">
+    <mat-grid-tile *ngFor="let comic of comics">
+    <img class="img-grid" [src]="comic.img">
+    <div class="overlay-fav"><mat-icon aria-hidden="false">star</mat-icon></div>
+    <div class="overlay">{{comic.name}}</div>
+  </mat-grid-tile>
+  </mat-grid-list>
+</div>
