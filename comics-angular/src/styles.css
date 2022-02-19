@@ -17,9 +17,9 @@ mat-grid-list{
     margin: auto;
 }
 mat-grid-tile{
-    display: block;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 16px;
+    background-color: aqua;
 }
 
 mat-grid-tile:hover .overlay {
@@ -31,14 +31,12 @@ mat-grid-tile:hover .overlay-fav {
 }
 
 /*Imagenes Grid*/
-
-.mat-grid-tile-content {
-    align-items: unset !important;
-}
 .img-grid{
-    width: 101%;
-    height: 101%;
-
+    width: 100%;
+    height: 100%;
+}
+.mat-grid-tile-content {
+    display: flow-root !important;
 }
 
 .overlay {
