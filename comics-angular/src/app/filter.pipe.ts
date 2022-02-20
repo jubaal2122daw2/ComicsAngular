@@ -9,15 +9,44 @@ import { Comic } from './service-comics/comics-interface';
 export class FilterPipe implements PipeTransform {
 
   transform(array: Comic[], ...args: any): Comic[] {
-    const results = [];
-    for(const comic of array){
-      if(comic.name.toLowerCase().indexOf(args[0].toLowerCase()) > -1 
-      && comic.autor.toLowerCase().indexOf(args[1].toLowerCase()) > -1 
-      && comic.types.indexOf(args[2]) > -1){
-        results.push(comic);
-      };
-    };
-    return results;
+
+    var matchGenre: boolean = false;
+    let arraySet = [...args[2]]
+
+      // comic.types.forEach(x => {
+      //   if(args[2].has(x)){
+      //     matchGenre = true;
+      //   }
+      // })
+      // if(args[2].size==0){
+      //   matchGenre = true;
+      // // }
+      // if(comic.name.toLowerCase().indexOf(args[0].toLowerCase()) > -1 
+      // && comic.autor.toLowerCase().indexOf(args[1].toLowerCase()) > -1 
+      // && matchGenre){
+      //   results.push(comic);
+      // };
+      if (array){
+        
+        
+        const titolRegex = new RegExp(args[0],'ig');
+        const autorRegex = new RegExp(args[1],'ig');
+        const genreRegex = new RegExp(args[2],'ig');
+        const results = array.filter((x) => x.name.match(titolRegex) && x.autor.match(autorRegex) && checkgenero(x.types));
+        return results;
+      }
+    
+      return [];
+
+      function checkgenero(generos:string[]):boolean{
+        for(let i:number=0 ; i < arraySet.length; i++){
+          if(generos.includes(arraySet[i])){
+            return true;
+          }
+        }
+        return false;
+      }
   }
 
 }
+

@@ -18,6 +18,7 @@ export class BuscarComicsComponent implements OnInit {
   autor: string = '';
   checked: any;
   setGeneros = new Set<string>();
+  stringGeneros = '';
 
 
   constructor(private comicService: Comics, private generoService: Generos) { }
@@ -42,10 +43,12 @@ export class BuscarComicsComponent implements OnInit {
     if(this.checked.checked){
       console.log("Está checked");
       this.setGeneros.add(label);
+      // this.stringGeneros = label;
       console.log(this.setGeneros);
     }else{
       console.log("Está unchecked");
       this.setGeneros.delete(label);
+      // this.stringGeneros = '';
       console.log(this.setGeneros);
     }
   }

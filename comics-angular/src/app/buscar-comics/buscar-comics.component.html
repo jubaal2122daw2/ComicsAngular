@@ -29,7 +29,7 @@
 <!--CONTENIDO COMICS -->
 <div class="contenido">
   <mat-grid-list cols="4" rowHeight="1:1.5" [gutterSize]="'20px'">
-    <mat-grid-tile *ngFor="let comic of comics | filter:titulo:autor">
+    <mat-grid-tile *ngFor="let comic of comics | filter:titulo:autor:setGeneros">
       <app-comic-template [infoComic]="comic">
 
       </app-comic-template>
