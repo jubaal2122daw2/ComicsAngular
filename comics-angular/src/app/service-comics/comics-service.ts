@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 import { Comic } from './comics-interface';
 import { COMICS } from './comics-mock';
 import { Observable, of } from 'rxjs';
+import { LocalStorageService } from 'ngx-webstorage';
 
 
 @Injectable({
@@ -14,7 +15,12 @@ import { Observable, of } from 'rxjs';
 })
 export class Comics {
 
-  constructor() { }
+  constructor(private storage: LocalStorageService) {
+    COMICS.forEach((objeto, index, array) => {
+      objeto.fav = storage.retrieve(objeto.id.toString());
+      array[index] = objeto;
+    })
+  }
 
   obtenerComics(): Observable<Comic[]> {
     return of(COMICS);

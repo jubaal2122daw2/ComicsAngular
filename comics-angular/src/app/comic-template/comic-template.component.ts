@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { LocalStorageService } from 'ngx-webstorage';
 
 import { Comic } from '../service-comics/comics-interface';
 
@@ -11,9 +12,12 @@ export class ComicTemplateComponent {
 
   @Input() infoComic: any;
 
+  constructor(private storage:LocalStorageService) {}
+
   anadirFavoritos(comic: Comic): void {
     comic.fav = !comic.fav;
     console.log(comic.fav);
+    this.storage.store(comic.id.toString(), comic.fav);
   }
 
 }

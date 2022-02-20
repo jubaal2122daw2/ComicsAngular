@@ -19,7 +19,6 @@ mat-grid-list{
 mat-grid-tile{
     cursor: pointer;
     border-radius: 16px;
-    background-color: aqua;
 }
 
 mat-grid-tile:hover .overlay {
@@ -48,7 +47,7 @@ mat-grid-tile:hover .overlay-fav {
     transition: .5s ease;
     opacity:0;
     color: white;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bolder;
     padding: 20px;
     text-align: center;
