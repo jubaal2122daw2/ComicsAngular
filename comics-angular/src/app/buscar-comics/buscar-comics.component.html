@@ -3,27 +3,36 @@
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Buscar Comics</mat-label>
-      <input matInput placeholder="Escribe para buscar tus comics...">
+      <input [(ngModel)]="variableInput" matInput placeholder="Escribe para buscar tus comics...">
+      <mat-icon color="primary" matSuffix>search</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Buscar Autor</mat-label>
+      <input [(ngModel)]="autor" matInput placeholder="Escribe para buscar el comic por autor...">
       <mat-icon color="primary" matSuffix>search</mat-icon>
     </mat-form-field>
   </p>
 
   <!--FILTRO GÉNEROS -->
   <div>
-    <section class="check" *ngFor="let type of types">
-      <mat-checkbox color="primary" [checked]="checked" (change)="!checked">{{type}}</mat-checkbox>
+    <section class="check" *ngFor="let type of checkboxTypes">
+      <mat-checkbox color="primary" (change)="type.isChecked">{{type.label}}</mat-checkbox>
+      <!-- <input type="checkbox"(change)="changeSelection(type)">{{type.label}} -->
     </section>
+    <button mat-raised-button color="primary">Aplicar Filtro</button>
   </div>
 </div>
 
 
 <!--CONTENIDO COMICS -->
 <div class="contenido">
-    <mat-grid-list cols="4" rowHeight="1:1.5"[gutterSize]="'20px'">
-      <mat-grid-tile *ngFor="let comic of comics" >
-        <app-comic-template [infoComic]="comic">
+  <mat-grid-list cols="4" rowHeight="1:1.5" [gutterSize]="'20px'">
+    <mat-grid-tile *ngFor="let comic of comics | filter:variableInput:autor">
+      <app-comic-template [infoComic]="comic">
 
-        </app-comic-template>
+      </app-comic-template>
     </mat-grid-tile>
-    </mat-grid-list>
+  </mat-grid-list>
 </div>

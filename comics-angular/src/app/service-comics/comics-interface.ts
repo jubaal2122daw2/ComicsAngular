@@ -2,6 +2,7 @@
 
 export interface Comic {
     id: number;
+    autor: string;
     img: string;
     name: string;
     types: string [];

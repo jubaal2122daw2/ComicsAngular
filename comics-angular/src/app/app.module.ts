@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 /*IMPORTS COMPONENTES */
@@ -21,6 +22,8 @@ import { ComicsComponent } from './comics/comics.component';
 import { AppComponent } from './app.component';
 import { ComicTemplateComponent } from './comic-template/comic-template.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
+import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     BuscarComicsComponent,
     ComicsComponent,
     ComicTemplateComponent,
-    FavoritosComponent
+    FavoritosComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,9 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     MatInputModule,
     MatCheckboxModule,
     MatCardModule,
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
