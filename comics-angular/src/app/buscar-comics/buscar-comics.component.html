@@ -3,7 +3,7 @@
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Buscar Comics</mat-label>
-      <input [(ngModel)]="variableInput" matInput placeholder="Escribe para buscar tus comics...">
+      <input [(ngModel)]="titulo" matInput placeholder="Escribe para buscar tus comics...">
       <mat-icon color="primary" matSuffix>search</mat-icon>
     </mat-form-field>
   </p>
@@ -17,11 +17,11 @@
 
   <!--FILTRO GÉNEROS -->
   <div>
-    <section class="check" *ngFor="let type of checkboxTypes">
-      <mat-checkbox color="primary" (change)="type.isChecked">{{type.label}}</mat-checkbox>
-      <!-- <input type="checkbox"(change)="changeSelection(type)">{{type.label}} -->
+    <section class="check" *ngFor="let genero of generos">
+      <!-- <mat-checkbox (change)="obtenerChecked($event)" color="primary">{{genero.label}}</mat-checkbox> -->
+      <input type="checkbox" (change)="obtenerChecked($event,genero.label)" color="primary">{{genero.label}}
     </section>
-    <button mat-raised-button color="primary">Aplicar Filtro</button>
+    <!-- <button mat-raised-button color="primary">Aplicar Filtro</button> -->
   </div>
 </div>
 
@@ -29,7 +29,7 @@
 <!--CONTENIDO COMICS -->
 <div class="contenido">
   <mat-grid-list cols="4" rowHeight="1:1.5" [gutterSize]="'20px'">
-    <mat-grid-tile *ngFor="let comic of comics | filter:variableInput:autor">
+    <mat-grid-tile *ngFor="let comic of comics | filter:titulo:autor">
       <app-comic-template [infoComic]="comic">
 
       </app-comic-template>
