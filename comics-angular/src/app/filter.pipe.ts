@@ -10,8 +10,6 @@ import { Comic } from './service-comics/comics-interface';
 export class FilterPipe implements PipeTransform {
 
   transform(array: Comic[], ...args: any): Comic[] {
-
-    var matchGenre: boolean = false;
     let arraySet:string[] = Array.from(args[2]);
 
       if (array){

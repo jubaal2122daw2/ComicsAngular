@@ -1,1 +1,10 @@
-<p>favoritos works!</p>
+<div class="contenido">
+    <mat-grid-list cols="4" rowHeight="1:1.5" [gutterSize]="'20px'">
+        <ng-container *ngFor="let comic of comics">
+            <mat-grid-tile *ngIf="comic.fav==true">
+                <app-comic-template  [infoComic]="comic">
+                </app-comic-template>
+            </mat-grid-tile>
+        </ng-container>
+    </mat-grid-list>
+</div>

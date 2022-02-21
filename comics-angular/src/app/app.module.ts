@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 /*IMPORTS COMPONENTES */
@@ -24,6 +25,7 @@ import { ComicTemplateComponent } from './comic-template/comic-template.componen
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { InfoComicComponent } from './info-comic/info-comic.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { FormsModule } from '@angular/forms';
     ComicTemplateComponent,
     FavoritosComponent,
     FilterPipe,
+    InfoComicComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     NgxWebstorageModule.forRoot(),
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

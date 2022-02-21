@@ -1,1 +1,6 @@
 /*Se queda vacío porque es un componente que se repite en todas las vistas y es mejor tenerlo en style.css*/
+
+.boton{
+    position: absolute;
+    width: 200%;
+}

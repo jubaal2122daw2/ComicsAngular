@@ -25,17 +25,6 @@ export class ComicsComponent implements OnInit {
       .subscribe(comics => this.comics = comics);
   }
 
-  // anadirFavoritos(comic:Comic): void{
-  //   // this.comics.forEach((objeto, index, array) => {
-  //   //   if(objeto.name = name){
-  //   //     array[index].fav = true;
-  //   //   }
-      
-  //   // });
-  //   comic.fav = !comic.fav;
-  //   console.log(comic.fav);
-  // }
-
 }
 
 
