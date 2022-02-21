@@ -14,7 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 
 /*IMPORTS COMPONENTES */
@@ -26,6 +27,7 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { InfoComicComponent } from './info-comic/info-comic.component';
+import { PreviewComponent } from './preview/preview.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { InfoComicComponent } from './info-comic/info-comic.component';
     FavoritosComponent,
     FilterPipe,
     InfoComicComponent,
+    PreviewComponent,
   ],
   imports: [
     BrowserModule,

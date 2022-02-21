@@ -1,5 +1,16 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div>
+<h1 mat-dialog-title>{{this.data.dataKey.name}}</h1>
+<mat-card>
+  <img class="portada" [src]="this.data.dataKey.img" alt="">
+  <mat-card-content class="sinopsis">
+    <p>
+      {{this.data.dataKey.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-header>
+    <mat-card-title>{{this.data.dataKey.autor}}</mat-card-title>
+    <mat-card-subtitle>Autor</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-button>Ver Preview</button>
+  </mat-card-actions>
+</mat-card>

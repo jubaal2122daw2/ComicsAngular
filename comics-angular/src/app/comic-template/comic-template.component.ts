@@ -23,8 +23,14 @@ export class ComicTemplateComponent {
     this.storage.store(comic.id.toString(), comic.fav);
   }
   
-  openDialog() {
-    this.dialog.open(InfoComicComponent);
+  openDialog(comic: Comic) {
+    this.dialog.open(InfoComicComponent, {
+      width: '500px',
+      height: '600px',
+      data: {
+        dataKey: comic
+      }
+    });
   }
 
 }

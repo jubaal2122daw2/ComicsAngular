@@ -7,5 +7,6 @@ export interface Comic {
     name: string;
     types: string [];
     description: string;
-    fav: boolean;
+    fav: boolean,
+    preview: string;
   }
