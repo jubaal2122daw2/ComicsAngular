@@ -1,5 +1,6 @@
 <img class="img-grid" [src]="infoComic.img">
-<div class="overlay-fav">
-    <mat-icon aria-hidden="false" (click)="anadirFavoritos(infoComic)">star</mat-icon>
+<div class="overlay-fav"(click)="anadirFavoritos(infoComic)">
+    <!-- <mat-icon aria-hidden="false" (click)="anadirFavoritos(infoComic)">star</mat-icon> -->
+    <mat-icon id={{infoComic.id}} aria-hidden="false" >star</mat-icon>
 </div>
 <div class="overlay">{{infoComic.name}}</div>

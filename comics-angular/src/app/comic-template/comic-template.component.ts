@@ -1,5 +1,7 @@
+declare var $: any;
 import { Component, Input, OnInit } from '@angular/core';
 import { LocalStorageService } from 'ngx-webstorage';
+
 
 import { Comic } from '../service-comics/comics-interface';
 
@@ -14,10 +16,20 @@ export class ComicTemplateComponent {
 
   constructor(private storage:LocalStorageService) {}
 
-  anadirFavoritos(comic: Comic): void {
+  ngAfterViewInit() { //carga lo primeno nada más iniciar
+    if(this.infoComic.fav == true){
+    $('#'+this.infoComic.id).css("color", "yellow");}
+    if(this.infoComic.fav == false){
+      $('#'+this.infoComic.id).css("color", "white");}
+  }
+  anadirFavoritos(comic: Comic,): void {
     comic.fav = !comic.fav;
     console.log(comic.fav);
     this.storage.store(comic.id.toString(), comic.fav);
+    if(comic.fav == true){
+      $('#'+this.infoComic.id).css("color", "yellow");}
+      if(comic.fav == false){
+        $('#'+this.infoComic.id).css("color", "white");}
   }
 
 }

@@ -18,7 +18,8 @@
   <!--FILTRO GÉNEROS -->
   <div>
     <section class="check" *ngFor="let genero of generos">
-      <input type="checkbox" (change)="obtenerChecked($event, genero.label)" value={{genero.id}} color="primary">{{genero.label}}
+      <input type="checkbox" (change)="obtenerChecked($event, genero.label)" value={{genero.id}}>{{genero.label}}
+      <span class="checked"></span>
     </section>
     <!-- <button mat-raised-button color="primary">Aplicar Filtro</button> -->
   </div>

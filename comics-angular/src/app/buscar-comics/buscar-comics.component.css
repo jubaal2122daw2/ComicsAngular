@@ -10,3 +10,7 @@
     color: #3F51B5;
     font-size: 18px;
 }
+input[type=checkbox]{
+    margin-right: 6px;
+    transform : scale(1.5);
+}
