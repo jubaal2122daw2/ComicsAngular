@@ -18,8 +18,7 @@
   <!--FILTRO GÉNEROS -->
   <div>
     <section class="check" *ngFor="let genero of generos">
-      <!-- <mat-checkbox (change)="obtenerChecked($event)" color="primary">{{genero.label}}</mat-checkbox> -->
-      <input type="checkbox" (change)="obtenerChecked($event,genero.label)" color="primary">{{genero.label}}
+      <input type="checkbox" (change)="obtenerChecked($event, genero.label)" value={{genero.id}} color="primary">{{genero.label}}
     </section>
     <!-- <button mat-raised-button color="primary">Aplicar Filtro</button> -->
   </div>
@@ -29,7 +28,7 @@
 <!--CONTENIDO COMICS -->
 <div class="contenido">
   <mat-grid-list cols="4" rowHeight="1:1.5" [gutterSize]="'20px'">
-    <mat-grid-tile *ngFor="let comic of comics | filter:titulo:autor">
+    <mat-grid-tile *ngFor="let comic of comics | filter:titulo:autor:setGeneros">
       <app-comic-template [infoComic]="comic">
 
       </app-comic-template>

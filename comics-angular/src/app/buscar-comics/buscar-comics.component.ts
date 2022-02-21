@@ -4,6 +4,7 @@ import { Comics } from '../service-comics/comics-service';
 import { Comic } from '../service-comics/comics-interface';
 import { Genero } from '../service-generos/generos-interface';
 import { Generos } from '../service-generos/generos-service';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Component({
   selector: 'app-buscar-comics',
@@ -36,18 +37,20 @@ export class BuscarComicsComponent implements OnInit {
     this.generoService.obtenerGeneros()
       .subscribe(generos => this.generos = generos);
   }
-
-  obtenerChecked(event: Event, label: string): void{
+  
+  obtenerChecked(event: any, label: string): void{
     this.checked = (event.target as HTMLInputElement);
     if(this.checked.checked){
       console.log("Está checked");
       this.setGeneros.add(label);
       console.log(this.setGeneros);
+
     }else{
       console.log("Está unchecked");
       this.setGeneros.delete(label);
       console.log(this.setGeneros);
     }
+    
   }
 
 }
