@@ -17,7 +17,7 @@ export class ComicTemplateComponent {
 
   constructor(private storage:LocalStorageService, public dialog: MatDialog) {}
   
-  anadirFavoritos(comic: Comic,): void {
+  anadirFavoritos(comic: Comic): void {
     comic.fav = !comic.fav;
     console.log(comic.fav);
     this.storage.store(comic.id.toString(), comic.fav);

@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
 
 
 /*IMPORTS COMPONENTES */
@@ -28,6 +29,7 @@ import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { InfoComicComponent } from './info-comic/info-comic.component';
 import { PreviewComponent } from './preview/preview.component';
+import { TablaComponent } from './tabla/tabla.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { PreviewComponent } from './preview/preview.component';
     FilterPipe,
     InfoComicComponent,
     PreviewComponent,
+    TablaComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { PreviewComponent } from './preview/preview.component';
     NgxWebstorageModule.forRoot(),
     MatButtonModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
