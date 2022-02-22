@@ -16,7 +16,7 @@ export class InfoComicComponent {
   
   constructor( @Inject(MAT_DIALOG_DATA) public data: any, private route:ActivatedRoute, private router:Router){
     console.log("modal data",this.data.dataKey.name);
-    this.generosToString = this.data.dataKey.types.join();
+    this.generosToString = this.data.dataKey.types.join(', ');
     console.log("modal genero",this.generosToString);
     this.resultado='';
   }

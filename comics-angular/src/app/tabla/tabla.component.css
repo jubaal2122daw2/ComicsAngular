@@ -1,3 +1,22 @@
 .contanido_tabla{
-
+width: 100%;
 }
+
+table.mat-table {
+    border-spacing: 0;
+    width: 80% !important;
+    margin: auto;
+}
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    /* text-align: left; */
+    width: 40% !important;
+    margin-left: 200px !important;
+}
+
+/* .mat-form-field-appearance-standard .mat-form-field-underline {
+    margin-left: 100px !important;
+    height: 1px;
+} */
