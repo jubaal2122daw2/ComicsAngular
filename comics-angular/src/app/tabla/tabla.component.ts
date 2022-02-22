@@ -4,26 +4,39 @@ import { LocalStorageService } from 'ngx-webstorage';
 
 import { Comic } from '../service-comics/comics-interface';
 import { COMICS } from '../service-comics/comics-mock';
+import { Comics } from '../service-comics/comics-service';
 
 @Component({
   selector: 'app-tabla',
   templateUrl: './tabla.component.html',
   styleUrls: ['./tabla.component.css']
 })
-export class TablaComponent {
+export class TablaComponent implements OnInit{
 
-  constructor(private storage:LocalStorageService){
-    
+  comics: Comic[] = [];
+
+  constructor(private comicService: Comics) { }
+
+
+  ngOnInit() {
+    this.obtenerComicsdeService();
   }
 
-  displayedColumns: string[] = ['Titulo', 'Autor', 'Generos'];
+  obtenerComicsdeService(): void {
+    this.comicService.obtenerComics()
+      .subscribe(comics => this.comics = comics);
+  }
+
+  displayedColumns: string[] = ['Titulo', 'Autor', 'Generos', 'Favoritos'];
   dataSource = new MatTableDataSource(COMICS);
+
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  chooseColor(elemento: any) {
+  chooseColor(elemento: Comic) {
     if (elemento.fav == true) {
       return "#f2e5c2"
     }
