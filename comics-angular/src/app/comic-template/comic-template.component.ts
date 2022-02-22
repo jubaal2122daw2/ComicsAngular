@@ -2,14 +2,72 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LocalStorageService } from 'ngx-webstorage';
 import { MatDialog } from '@angular/material/dialog';
 import { InfoComicComponent } from '../info-comic/info-comic.component';
-
+import {trigger,state,style,animate,transition} from '@angular/animations';
 
 import { Comic } from '../service-comics/comics-interface';
 
 @Component({
   selector: 'app-comic-template',
   templateUrl: './comic-template.component.html',
-  styleUrls: ['./comic-template.component.css']
+  styleUrls: ['./comic-template.component.css'],
+  animations: [
+    trigger('openClose', [
+      // ...
+      state('open', style({
+        
+        opacity: 1,
+        
+      })),
+      state('closed', style({
+        opacity: 1,
+        transform: 'scale(1.4)'
+      })),
+      transition('open => closed', [
+        animate('0.1s')
+      ]),
+      transition('closed => open', [
+        animate('0.1s')
+      ]),
+    ]),
+    trigger('mostrarautor', [
+      // ...
+      state('open', style({
+        
+        opacity: 0,
+        
+      })),
+      state('closed', style({
+        opacity: 1,
+        transform: 'scale(1.0)'
+        
+      })),
+      transition('open => closed', [
+        animate('0.1s')
+      ]),
+      transition('closed => open', [
+        animate('0.1s')
+      ]),
+    ]),
+    trigger('zoom', [
+      // ...
+      state('open', style({
+        
+        opacity: 1,
+        
+      })),
+      state('closed', style({
+        opacity: 1,
+        transform: 'scale(1.1)'
+        
+      })),
+      transition('open => closed', [
+        animate('0.1s')
+      ]),
+      transition('closed => open', [
+        animate('0.1s')
+      ]),
+    ]),
+  ],
 })
 export class ComicTemplateComponent {
 
@@ -33,4 +91,21 @@ export class ComicTemplateComponent {
     });
   }
 
+  isOpen = true;
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+
+
+  mautor = true;
+
+  mostra() {
+    this.mautor = !this.mautor;
+  }
+  izoom = true;
+
+  zoom() {
+    this.izoom = !this.izoom;
+  }
 }

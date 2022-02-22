@@ -1,6 +1,10 @@
-<img class="img-grid" [src]="infoComic.img" (click)="openDialog(infoComic)">
-<div class="overlay-fav"(click)="anadirFavoritos(infoComic)">
-    <!-- <mat-icon aria-hidden="false" (click)="anadirFavoritos(infoComic)">star</mat-icon> -->
-    <mat-icon id={{infoComic.id}} [ngStyle]="{'color': infoComic.fav==true ? 'yellow':'white'}" aria-hidden="false">star</mat-icon>
+<div (mouseover)="zoom()" (mouseout)="zoom()">
+    <img class="img-grid" [src]="infoComic.img" [@zoom]="izoom ? 'open' : 'closed'" (click)="openDialog(infoComic)">
+    <div class="overlay-fav" (click)="anadirFavoritos(infoComic)" (mouseover)="toggle()" (mouseout)="toggle()">
+        <mat-icon id={{infoComic.id}} [@openClose]="isOpen ? 'open' : 'closed'"
+            [ngStyle]="{'color': infoComic.fav==true ? 'yellow':'white'}" aria-hidden="false">star</mat-icon>
+    </div>
+    <div class="overlay" (mouseover)="mostra()" (mouseout)="mostra()">{{infoComic.name}}
+        <div [ngStyle]="{'color': 'yellow'}" [@mostrarautor]="mautor ? 'open' : 'closed'">{{infoComic.autor}}</div>
+    </div>
 </div>
-<div class="overlay">{{infoComic.name}}</div>
