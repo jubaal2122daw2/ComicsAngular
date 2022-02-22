@@ -1,8 +1,32 @@
+mat-card{
+    background-color: #d0d5ec !important;
+}
+
+.contenido{
+    display: flex;
+    align-items: center;
+}
+
 .portada{
     width: 45%;
     margin-bottom: 15px;
+
+}
+.titulo{
+    font-size: 30px;
+}
+.sinopsis{
+    text-align: justify;
+    font-size: 18px;
+    padding-left: 20px;
+    line-height: 1.6
+}
+.mat-card-actions:not(.mat-card-actions-align-end) .mat-button:first-child, .mat-card-actions:not(.mat-card-actions-align-end) .mat-raised-button:first-child, .mat-card-actions:not(.mat-card-actions-align-end) .mat-stroked-button:first-child {
+    margin-left: 4% !important;
+    background-color: #5462b1;
+    color: white;
 }
 
-.sinopsis{
-    display: inline-block;
+.mat-card-header .mat-card-subtitle:not(:first-child) {
+    margin-top: 0px !important;
 }

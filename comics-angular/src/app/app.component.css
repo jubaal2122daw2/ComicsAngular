@@ -15,5 +15,6 @@
     width: 78%;
 }
 #nombreApp{
-    font-size: 25px;
+    font-size:2.5vw;
+    font-family: 'Indie Flower', cursive;
 }

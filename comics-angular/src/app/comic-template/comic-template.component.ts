@@ -25,8 +25,8 @@ export class ComicTemplateComponent {
   
   openDialog(comic: Comic) {
     this.dialog.open(InfoComicComponent, {
-      width: '500px',
-      height: '600px',
+      width: '550px',
+      height: '650px',
       data: {
         dataKey: comic
       }
