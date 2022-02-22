@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LocalStorageService } from 'ngx-webstorage';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { InfoComicComponent } from '../info-comic/info-comic.component';
-import {trigger,state,style,animate,transition} from '@angular/animations';
+import { trigger,state,style,animate,transition } from '@angular/animations';
 
 import { Comic } from '../service-comics/comics-interface';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
@@ -98,6 +98,7 @@ export class ComicTemplateComponent {
       }
     });
   }
+
 
   isOpen = true;
 
