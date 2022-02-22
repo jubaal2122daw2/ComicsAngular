@@ -11,8 +11,7 @@ table.mat-table {
 .mat-form-field {
     display: inline-block;
     position: relative;
-    /* text-align: left; */
-    width: 40% !important;
+    text-align: left;
     margin-left: 200px !important;
 }
 

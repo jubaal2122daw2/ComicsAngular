@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
+import { dbConfig } from './database/indexedb';
 
 /*IMPORTS MATERIAL */
 import { MatMenuModule } from '@angular/material/menu';
@@ -30,6 +32,9 @@ import { FormsModule } from '@angular/forms';
 import { InfoComicComponent } from './info-comic/info-comic.component';
 import { PreviewComponent } from './preview/preview.component';
 import { TablaComponent } from './tabla/tabla.component';
+
+/*INDEXED */
+
 
 @NgModule({
   declarations: [
@@ -59,7 +64,8 @@ import { TablaComponent } from './tabla/tabla.component';
     MatButtonModule,
     FormsModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    NgxIndexedDBModule.forRoot(dbConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

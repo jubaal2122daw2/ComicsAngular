@@ -5,6 +5,7 @@ import { InfoComicComponent } from '../info-comic/info-comic.component';
 import {trigger,state,style,animate,transition} from '@angular/animations';
 
 import { Comic } from '../service-comics/comics-interface';
+import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 @Component({
   selector: 'app-comic-template',
@@ -73,12 +74,19 @@ export class ComicTemplateComponent {
 
   @Input() infoComic: any;
 
-  constructor(private storage:LocalStorageService, public dialog: MatDialog) {}
+  constructor(private storage:LocalStorageService, public dialog: MatDialog, private dbService: NgxIndexedDBService) {}
   
   anadirFavoritos(comic: Comic): void {
     comic.fav = !comic.fav;
     console.log(comic.fav);
     this.storage.store(comic.id.toString(), comic.fav);
+
+    this.dbService.update('comicsTable', {
+      id: comic.id.toString(),
+      fav: comic.fav,
+    }).subscribe((key)=>{
+      console.log('key: ', key);
+    });
   }
   
   openDialog(comic: Comic) {
