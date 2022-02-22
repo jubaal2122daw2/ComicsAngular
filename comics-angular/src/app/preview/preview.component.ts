@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './preview.component.html',
   styleUrls: ['./preview.component.css']
 })
-export class PreviewComponent implements OnInit {
+export class PreviewComponent{
 
-  constructor() { }
+  recibido: string;
 
-  ngOnInit(): void {
-  }
+  constructor() {
+    this.recibido = history.state.data[Object.keys(history.state.data)[0]];
+ }
 
 }

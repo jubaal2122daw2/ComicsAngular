@@ -1,4 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Comic } from '../service-comics/comics-interface';
@@ -10,8 +11,16 @@ import { Comic } from '../service-comics/comics-interface';
 })
 export class InfoComicComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any){
-    console.log(this.data.dataKey.name);
+  resultado:string;
+  
+  constructor( @Inject(MAT_DIALOG_DATA) public data: any, private route:ActivatedRoute, private router:Router){
+    console.log("modal data",this.data.dataKey.name);
+    this.resultado='';
+  }
+
+  verPreview(dato:string):void{
+    this.resultado = dato;
+    this.router.navigate(["/preview"],{state: {data: {dato:this.resultado}}});
   }
 
 }
